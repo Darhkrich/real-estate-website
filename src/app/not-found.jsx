@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import Footer from '@/components/Footer';
+
 import { Home, Search } from 'lucide-react';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Simple header instead of Navbar */}
+      {/* Static header – no client hooks */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 h-20 flex items-center px-6">
         <Link href="/" className="text-2xl font-serif font-bold text-gray-900">
           PRIME<span className="text-amber-600">ESTATE</span>.
@@ -43,7 +43,6 @@ export default function NotFound() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

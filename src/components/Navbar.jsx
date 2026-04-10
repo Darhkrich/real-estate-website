@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   Menu,
-  Search,
   X,
   ChevronRight,
   Home,
@@ -25,11 +24,8 @@ export default function Navbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [showCurrencyMenu, setShowCurrencyMenu] = useState(false);
-
   const currencyMenuRef = useRef(null);
-  const searchInputRef = useRef(null);
 
   // Scroll effect
   useEffect(() => {
@@ -41,7 +37,6 @@ export default function Navbar() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setIsSearchOpen(false);
     setShowCurrencyMenu(false);
   }, [pathname]);
 
@@ -65,13 +60,6 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
-  // Focus search input when opened
-  useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
 
   const navLinks = [
     { href: '/', label: 'Home', icon: Home },
@@ -154,10 +142,14 @@ export default function Navbar() {
                           setShowCurrencyMenu(false);
                         }}
                         className={`w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 flex items-center justify-between transition-colors ${
-                          selectedCurrency === code ? 'text-amber-600 font-medium bg-amber-50/50' : 'text-gray-700'
+                          selectedCurrency === code
+                            ? 'text-amber-600 font-medium bg-amber-50/50'
+                            : 'text-gray-700'
                         }`}
                       >
-                        <span>{code} – {name}</span>
+                        <span>
+                          {code} – {name}
+                        </span>
                         <span className="text-gray-400">{symbol}</span>
                       </button>
                     ))}
@@ -178,20 +170,6 @@ export default function Navbar() {
                   </span>
                 )}
               </Link>
-
-              {/* Search Toggle */}
-              <button
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                aria-label="Search properties"
-                aria-expanded={isSearchOpen}
-              >
-                {isSearchOpen ? (
-                  <X className="w-5 h-5 text-gray-600" />
-                ) : (
-                  <Search className="w-5 h-5 text-gray-600" />
-                )}
-              </button>
 
               {/* List Property CTA (Desktop) */}
               <Link
@@ -226,38 +204,6 @@ export default function Navbar() {
               </button>
             </div>
           </div>
-
-          {/* Expandable Search Bar */}
-          {isSearchOpen && (
-            <div className="py-4 border-t border-gray-100 animate-in slide-in-from-top-2 duration-200">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  placeholder="Search by city, address, or MLS #..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Escape') setIsSearchOpen(false);
-                  }}
-                />
-              </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="text-xs text-gray-500">Popular:</span>
-                {['New York', 'Malibu', 'Miami', 'Boston', 'Nashville'].map((city) => (
-                  <button
-                    key={city}
-                    className="text-xs px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
-                    onClick={() => {
-                      window.location.href = `/properties?location=${encodeURIComponent(city)}`;
-                    }}
-                  >
-                    {city}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
