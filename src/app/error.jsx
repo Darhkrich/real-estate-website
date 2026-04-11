@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default function Error({ error, reset }) {
   useEffect(() => {
     // Log error to console in development

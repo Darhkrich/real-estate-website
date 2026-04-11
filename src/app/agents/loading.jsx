@@ -1,4 +1,5 @@
 import AgentGridSkeleton from '@/components/skeletons/AgentGridSkeleton';
+export const dynamic = 'force-dynamic';
 
 export default function AgentsLoading() {
   return (

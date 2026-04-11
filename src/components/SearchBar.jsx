@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search, MapPin, X } from 'lucide-react';
 import { properties } from '@/data/properties';
@@ -14,16 +14,19 @@ function debounce(func, wait) {
   };
 }
 
-export default function SearchBar({ initialStatus = 'all' }) {
+// ----------------------------------------------------------------------
+// Internal component that actually uses useSearchParams
+// ----------------------------------------------------------------------
+function SearchBarContent({ initialStatus = 'all' }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const [location, setLocation] = useState(searchParams.get('location') || '');
   const [status, setStatus] = useState(searchParams.get('status') || initialStatus);
   const [type, setType] = useState(searchParams.get('type') || 'all');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredLocations, setFilteredLocations] = useState([]);
-  
+
   const inputRef = useRef(null);
   const suggestionsRef = useRef(null);
 
@@ -218,5 +221,16 @@ export default function SearchBar({ initialStatus = 'all' }) {
         <span className="hidden md:inline">Search</span>
       </button>
     </form>
+  );
+}
+
+// ----------------------------------------------------------------------
+// Default export wrapped in Suspense to fix build errors
+// ----------------------------------------------------------------------
+export default function SearchBar(props) {
+  return (
+    <Suspense fallback={<div className="text-center py-4">Loading search...</div>}>
+      <SearchBarContent {...props} />
+    </Suspense>
   );
 }

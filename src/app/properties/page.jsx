@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SearchBar from '@/components/SearchBar';
 import PropertiesContent from '@/components/PropertiesContent';
 import { properties } from '@/data/properties';
@@ -94,7 +93,7 @@ export default async function PropertiesPage({ searchParams }) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
+   
 
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 pt-24 pb-28 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
@@ -117,7 +116,7 @@ export default async function PropertiesPage({ searchParams }) {
 </Suspense>
       </main>
 
-      <Footer />
+   
     </div>
   );
 }

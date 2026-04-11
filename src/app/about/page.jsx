@@ -1,6 +1,7 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Link from 'next/link';
 import { Award, Users, Target, Home } from 'lucide-react';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'About Us | Prime Estate',
@@ -9,9 +10,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-
+    <>
       {/* Hero */}
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 pt-24 pb-16 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
@@ -94,16 +93,14 @@ export default function AboutPage() {
           <p className="text-gray-600 mb-6">
             Our agents are industry leaders with deep local knowledge and a passion for luxury real estate.
           </p>
-          <a
+          <Link
             href="/agents"
             className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-amber-600 transition-colors"
           >
             View Our Agents
-          </a>
+          </Link>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </>
   );
 }

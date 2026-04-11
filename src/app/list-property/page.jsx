@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import {
   Home,
   Upload,
@@ -20,6 +19,9 @@ import {
   Camera,
 } from 'lucide-react';
 import OptimizedImage from '@/components/OptimizedImage';
+
+export const dynamic = 'force-dynamic';
+
 
 const STEPS = [
   { id: 1, name: 'Property Details', icon: Home },
@@ -162,7 +164,7 @@ export default function ListPropertyPage() {
   if (isSuccess) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col">
-        <Navbar />
+      
         <main className="flex-grow flex items-center justify-center px-4 py-20">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-200 max-w-lg text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -184,14 +186,14 @@ export default function ListPropertyPage() {
             </a>
           </div>
         </main>
-        <Footer />
+       
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
+   
 
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 pt-20 pb-12 px-6 text-center">
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-3">
@@ -721,7 +723,7 @@ export default function ListPropertyPage() {
         </div>
       </main>
 
-      <Footer />
+    
     </div>
   );
 }

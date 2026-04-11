@@ -1,22 +1,20 @@
 import { Suspense } from 'react';
 import { FavoritesProvider } from '@/components/FavoritesContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { GoogleAnalytics, FacebookPixel } from '@/components/Analytics';
 import PageViewTracker from '@/components/PageViewTracker';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CurrencyProvider } from '@/context/CurrencyContext';
 import './globals.css';
 
-
-
 export const metadata = {
-
   title: {
-    default: ' Estate Website | Luxury Real Estate',
-    template: '%s |Estate Website',
+    default: 'Prime Estate | Luxury Real Estate',
+    template: '%s | Prime Estate',
   },
-  description: 'Discover exceptional luxury properties with Prime Estate. Browse curated homes, penthouses, villas, and estates with award-winning agents.',
-  keywords: ['luxury real estate', 'homes for sale', 'penthouses', 'villas', 'estates', 'Prime Estate'],
+  description:
+    'Discover exceptional luxury properties with Prime Estate. Browse curated homes, penthouses, villas, and estates with award-winning agents.',
+  keywords: ['luxury real estate', 'homes for sale', 'penthouses', 'villas', 'estates'],
   authors: [{ name: 'DevMasters' }],
   creator: 'DevMasters.tech',
   publisher: 'Prime Estate',
@@ -25,46 +23,25 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: ' Estate Website | Luxury Real Estate',
-    description: 'Discover exceptional luxury properties with Prime Estate. Browse curated homes, penthouses, villas, and estates with award-winning agents.',
+    title: 'Prime Estate | Luxury Real Estate',
+    description: 'Discover exceptional luxury properties with Prime Estate.',
     url: '/',
     siteName: 'Prime Estate',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Prime Estate - Luxury Real Estate',
-      },
-    ],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Prime Estate' }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: ' Estate Website| Luxury Real Estate',
+    title: 'Prime Estate | Luxury Real Estate',
     description: 'Discover exceptional luxury properties with Prime Estate.',
     images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    // Add your verification codes if needed
-    // google: 'your-google-verification-code',
   },
 };
-
-
-
 
 export default function RootLayout({ children }) {
   return (
@@ -74,12 +51,15 @@ export default function RootLayout({ children }) {
         <FacebookPixel />
         <CurrencyProvider>
           <FavoritesProvider>
-            <PageViewTracker />
+            <Suspense fallback={null}>
+              <PageViewTracker />
+            </Suspense>
+            {/* Wrap Navbar in Suspense to handle any client hooks */}
             <Suspense fallback={<div className="h-20 bg-white/90" />}>
-            
+              <Navbar />
             </Suspense>
             {children}
-            
+            <Footer />
           </FavoritesProvider>
         </CurrencyProvider>
       </body>

@@ -3,8 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import ImageSlider from '@/components/ImageSlider';
 import VirtualTour from '@/components/VirtualTour';
 import FavoriteButton from '@/components/FavoriteButton';
@@ -103,7 +102,7 @@ export default function PropertyDetailsClient({ params }) {
   if (error || !property) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Navbar />
+   
         <div className="flex-grow flex items-center justify-center">
           <div className="text-center py-20">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Property Not Found</h1>
@@ -113,7 +112,7 @@ export default function PropertyDetailsClient({ params }) {
             </Link>
           </div>
         </div>
-        <Footer />
+       
       </div>
     );
   }
@@ -136,8 +135,7 @@ export default function PropertyDetailsClient({ params }) {
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      <Navbar />
-
+   
       {showShareToast && (
         <div className="fixed top-24 right-4 z-50 bg-gray-900 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2">
           <Check className="w-4 h-4 text-green-400" />
@@ -369,7 +367,7 @@ export default function PropertyDetailsClient({ params }) {
         </div>
       </main>
 
-      <Footer />
+   
     </div>
   );
 }

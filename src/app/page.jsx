@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SearchBar from '@/components/SearchBar';
 import OptimizedImage from '@/components/OptimizedImage';
 import FavoriteButton from '@/components/FavoriteButton';
@@ -49,7 +48,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
+     
 
       <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center">
         <div className="absolute inset-0">
@@ -218,7 +217,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
+   
     </div>
   );
 }
