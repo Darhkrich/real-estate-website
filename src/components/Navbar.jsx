@@ -87,7 +87,7 @@ export default function Navbar() {
               className="text-2xl font-serif font-bold tracking-tighter text-gray-900 hover:text-amber-600 transition-colors"
               aria-label="Prime Estate Home"
             >
-              PRIME<span className="text-amber-600">ESTATE</span>
+              COMPANY<span className="text-amber-600">NAME</span>
               <span className="text-amber-600">.</span>
             </Link>
 
