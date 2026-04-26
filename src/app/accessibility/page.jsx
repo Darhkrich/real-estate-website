@@ -3,7 +3,7 @@ import { CheckCircle } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Accessibility Statement | Prime Estate',
+  title: 'Accessibility Statement | Company Name',
   description: 'Our commitment to digital accessibility for all users.',
 };
 

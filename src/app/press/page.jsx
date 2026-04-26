@@ -3,7 +3,7 @@ import { Newspaper, ExternalLink } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Press & Media | Prime Estate',
+  title: 'Press & Media | Company Name',
   description: 'Latest news, media coverage, and press releases from Prime Estate.',
 };
 

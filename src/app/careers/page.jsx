@@ -4,7 +4,7 @@ import { Briefcase, Star, TrendingUp, Users } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Careers | Prime Estate',
+  title: 'Careers | Company Name',
   description: 'Join our team of elite real estate professionals and elevate your career with unparalleled support and exclusive listings.',
 };
 

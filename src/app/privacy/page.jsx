@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Privacy Policy | Prime Estate',
+  title: 'Privacy Policy | Company Name',
   description: 'Learn how Prime Estate collects, uses, and protects your personal information.',
 };
 

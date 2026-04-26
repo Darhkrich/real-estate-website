@@ -9,7 +9,7 @@ import './globals.css';
 
 export const metadata = {
   title: {
-    default: 'Prime Estate | Luxury Real Estate',
+    default: 'Estate Website | Luxury Real Estate',
     template: '%s | Prime Estate',
   },
   description:

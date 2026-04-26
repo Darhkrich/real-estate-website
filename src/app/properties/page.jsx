@@ -6,7 +6,7 @@ import { properties } from '@/data/properties';
 import PropertyGridSkeleton from '@/components/skeletons/PropertyGridSkeleton';
 
 export const metadata = {
-  title: 'Properties | Prime Estate',
+  title: 'Properties | Company Name',
   description: 'Browse our curated collection of luxury properties for sale and rent.',
 };
 

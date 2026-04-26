@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 
 
 export const metadata = {
-  title: 'Terms of Service | Prime Estate',
+  title: 'Terms of Service |',
   description: 'Terms and conditions for using the Prime Estate website and services.',
 };
 

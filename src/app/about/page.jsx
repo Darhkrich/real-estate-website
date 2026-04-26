@@ -4,7 +4,7 @@ import { Award, Users, Target, Home } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'About Us | Prime Estate',
+  title: 'About Us | Company Name',
   description: 'Discover the story behind Prime Estate – a luxury real estate firm built on trust, expertise, and an unwavering commitment to excellence.',
 };
 
