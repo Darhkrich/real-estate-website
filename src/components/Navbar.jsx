@@ -180,14 +180,15 @@ export default function Navbar() {
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
 
-              {/* Contact Phone (Desktop) */}
-              <a
-                href="tel:+12125550199"
-                className="hidden xl:flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors"
+ <Link
+                href="/contact"
+                className="hidden lg:inline-flex items-center text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-amber-600 transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                <Phone className="w-4 h-4" />
-                <span>+1 (000) 123-4567</span>
-              </a>
+                Contact
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </Link>
+
+          
 
               {/* Mobile Menu Toggle */}
               <button
@@ -259,12 +260,23 @@ export default function Navbar() {
                   List Your Property
                   <ChevronRight className="w-4 h-4 ml-2" />
                 </Link>
+
+               
+ <Link
+                href="/contact"
+                className="hidden lg:inline-flex items-center text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-amber-600 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                
+                
+              </Link>
+ 
                 <a
-                  href="tel:+12125550199"
+                  href="/contact"
                   className="flex items-center justify-center w-full border border-gray-200 text-gray-700 px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  +1 (212) 555-0199
+                  
+                Contact
+                  <ChevronRight className="w-4 h-4 ml-1" />
                 </a>
               </div>
 
