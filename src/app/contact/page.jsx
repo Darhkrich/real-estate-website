@@ -38,9 +38,9 @@ function ContactContent() {
   };
 
   const officeInfo = {
-    address: '100 Luxury Lane, Penthouse\nNew York, NY 10012',
+    address: 'Company\nLocation',
     phone: agents[0]?.phone || '+1 (212) 555-0199',
-    email: 'concierge@primeestate.com',
+    email: 'concierge@pcompanyemail.com',
     hours: [
       { day: 'Monday - Friday', time: '9:00 AM - 7:00 PM' },
       { day: 'Saturday', time: '10:00 AM - 5:00 PM' },
