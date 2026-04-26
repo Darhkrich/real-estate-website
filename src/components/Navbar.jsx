@@ -186,7 +186,7 @@ export default function Navbar() {
                 className="hidden xl:flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>+1 (212) 555-0199</span>
+                <span>+1 (000) 123-4567</span>
               </a>
 
               {/* Mobile Menu Toggle */}

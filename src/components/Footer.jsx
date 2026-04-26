@@ -26,7 +26,7 @@ export default function Footer() {
   };
 
   const mainOffice = {
-    address: '100 Luxury Lane, Penthouse\nNew York, NY 10012',
+    address: 'Company\nLocation',
     phone: agents[0]?.phone || '+1 (000) 123-5467',
     email: 'info@pcompanyemail.com',
   };
